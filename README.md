@@ -1,5 +1,5 @@
 # ClassFinder 🏛️
-### UIE Free Room Detector — Chandigarh University
+### UIC Free Room Detector — Chandigarh University
 
 > Find free classrooms in your department in real-time, based on the actual section-wise timetable.
 
