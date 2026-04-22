@@ -48,7 +48,7 @@ This is implemented using real timetable cross-referencing with JS logic — not
 
 ---
 
-## 📚 Syllabus Coverage (Web Designing - UIE)
+## 📚 Syllabus Coverage (Web Designing - UIC)
 
 Topics from your Web Designing syllabus used in this project:
 - **HTML**: Semantic tags, forms (select, button), data attributes, links
@@ -86,4 +86,4 @@ No build step. No server. Works entirely in the browser.
 
 ---
 
-*Created with the assistance of Claude (Anthropic) · UIE, Chandigarh University · Jan-June 2026 Session*
+*Created with the assistance of Claude (Anthropic) · UIC, Chandigarh University · Jan-June 2026 Session*
