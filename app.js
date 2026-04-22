@@ -1,6 +1,6 @@
 /* ============================================================
    ClassFinder — app.js
-   Free Room Finder for UIE, Chandigarh University
+   Free Room Finder for UIC, Chandigarh University
    Uses HTML, CSS, JS, jQuery
    UNIQUE FEATURE: Upcoming Free Slots Timeline per room
 ============================================================ */
