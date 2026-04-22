@@ -1,5 +1,5 @@
 // ============================================================
-//  timetable.js — Real UIE Department Timetable Data
+//  timetable.js — Real UIC Department Timetable Data
 //  Extracted from Section-wise-11Jan26.pdf
 //  All 39 sections: 23BCA 1-9, 23BSC-1, 23BCV-1, 23BCU-1,
 //  24BCA 1-8, 24BSC-1, 24BCV-1, 24BCU-1, 24BCD 1-3,
