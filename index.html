@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClassFinder — UIE Free Room Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-box">
+    <div class="loader-icon">🏛️</div>
+    <div class="loader-title">ClassFinder</div>
+    <div class="loader-sub">UIE · University Institute of Computing</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <div class="loader-msg" id="loader-msg">Loading timetable data...</div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none">
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-left">
+      <div class="logo">🏛️ <span>Class<b>Finder</b></span></div>
+      <div class="header-sub">UIE · Free Room Detector</div>
+    </div>
+    <div class="header-right">
+      <div id="live-clock"></div>
+      <div id="live-day"></div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="hero-text">
+      <h1>Find a Free<br/><span>Classroom</span></h1>
+      <p>Beat the heat. Pick your time. We'll find you an empty room.</p>
+    </div>
+    <div id="search-panel">
+      <div class="search-row">
+        <div class="field-group">
+          <label>📅 Day</label>
+          <select id="sel-day">
+            <option value="Mo">Monday</option>
+            <option value="Tu">Tuesday</option>
+            <option value="We">Wednesday</option>
+            <option value="Th">Thursday</option>
+            <option value="Fr">Friday</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>⏰ Time Slot</label>
+          <select id="sel-slot">
+            <option value="1">Slot 1 · 9:55–10:40</option>
+            <option value="2">Slot 2 · 10:40–11:25</option>
+            <option value="3">Slot 3 · 11:25–12:10</option>
+            <option value="4">Slot 4 · 12:10–12:55</option>
+            <option value="5">Slot 5 · 12:55–1:40</option>
+            <option value="6">Slot 6 · 1:40–2:25</option>
+            <option value="7">Slot 7 · 2:25–3:10</option>
+            <option value="8">Slot 8 · 3:10–3:55</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>🏢 Floor</label>
+          <select id="sel-floor">
+            <option value="all">All Floors</option>
+            <option value="1">Floor 1</option>
+            <option value="2">Floor 2</option>
+            <option value="3">Floor 3</option>
+            <option value="4">Floor 4</option>
+            <option value="5">Floor 5</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>🏷️ Room Type</label>
+          <select id="sel-type">
+            <option value="all">All Rooms</option>
+            <option value="Lecture">Lecture Halls</option>
+            <option value="Lab">Labs (S/W)</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-actions">
+        <button id="find-now-btn">⚡ Find Free Rooms Now</button>
+        <button id="find-current-btn" class="btn-secondary">🕐 Use Current Time</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div id="stats-bar" style="display:none">
+    <div class="stat-pill" id="sp-free">
+      <span class="sp-num" id="sp-free-num">0</span>
+      <span class="sp-label">Free Rooms</span>
+    </div>
+    <div class="stat-pill" id="sp-busy">
+      <span class="sp-num" id="sp-busy-num">0</span>
+      <span class="sp-label">Occupied</span>
+    </div>
+    <div class="stat-pill">
+      <span class="sp-num" id="sp-slot-label">—</span>
+      <span class="sp-label">Time Slot</span>
+    </div>
+    <div class="stat-pill">
+      <span class="sp-num" id="sp-duration">45 min</span>
+      <span class="sp-label">Duration</span>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <section id="results" style="display:none">
+    <div class="results-header">
+      <h2>Free Rooms <span id="result-day-label"></span></h2>
+      <div class="floor-tabs" id="floor-tabs"></div>
+    </div>
+    <div id="rooms-grid"></div>
+  </section>
+
+  <!-- UPCOMING SECTION (UNIQUE FEATURE) -->
+  <section id="upcoming-section" style="display:none">
+    <div class="results-header">
+      <h2>⏭️ Upcoming Free Slots <span class="badge-unique">★ UNIQUE FEATURE</span></h2>
+      <p class="upcoming-desc">See when each room will next be free today</p>
+    </div>
+    <div id="upcoming-grid"></div>
+  </section>
+
+  <!-- FLOOR MAP (UNIQUE FEATURE) -->
+  <section id="floormap-section" style="display:none">
+    <div class="results-header">
+      <h2>🗺️ Floor-wise Availability Map</h2>
+    </div>
+    <div id="floor-map"></div>
+  </section>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+</div>
+
+<script src="timetable.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
